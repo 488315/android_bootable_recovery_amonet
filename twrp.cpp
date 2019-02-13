@@ -371,6 +371,8 @@ static void reboot() {
 		TWFunc::tw_reboot(rb_edl);
 	else if (Reboot_Arg == "fastboot")
 		TWFunc::tw_reboot(rb_fastboot);
+	else if (Reboot_Arg == "hacked_bl")
+		TWFunc::tw_reboot(rb_hacked_bl);
 	else
 		TWFunc::tw_reboot(rb_system);
 }
