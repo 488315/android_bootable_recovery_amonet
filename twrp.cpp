@@ -419,8 +419,10 @@ int main(int argc, char **argv) {
 
 	// Load default values to set DataManager constants and handle ifdefs
 	DataManager::SetDefaultValues();
+#ifndef TW_NO_SCREEN
 	printf("Starting the UI...\n");
 	gui_init();
+#endif
 
 	// Load up all the resources
 	gui_loadResources();
@@ -441,7 +443,9 @@ int main(int argc, char **argv) {
 	}
 
 	PageManager::LoadLanguage(DataManager::GetStrValue("tw_language"));
+#ifndef TW_NO_SCREEN
 	GUIConsole::Translate_Now();
+#endif
 
 	TWFunc::checkforapp(); //Checking compatibility for TWRP app
 
