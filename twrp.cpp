@@ -305,6 +305,19 @@ static void process_recovery_mode(twrpAdbBuFifo* adb_bu_fifo, bool skip_decrypti
 	}
 #endif
 
+#ifdef TW_BOOT_MENU
+	// Check the cmdline to see if boot_reason=0
+	char line[2048];
+	FILE *fp = fopen("/proc/cmdline", "rt");
+	if (fp != NULL) {
+		fgets(line, sizeof(line), fp);
+		fclose(fp); // cmdline is only one line long
+		if(strstr(line, "boot_reason=0")) {
+			boot_menu();
+		}
+	}
+#endif
+
 #ifndef TW_OEM_BUILD
 	// Check if system has never been changed
 	TWPartition* sys = PartitionManager.Find_Partition_By_Path(PartitionManager.Get_Android_Root_Path());

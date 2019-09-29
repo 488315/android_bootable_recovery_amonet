@@ -330,6 +330,9 @@ protected:
 	int checkforapp(std::string arg);
 	int unmapsuperdevices(std::string arg);
 	int removedynamicgroups(std:: string arg);
+#ifdef TW_BOOT_MENU
+	int nonthreadedcmd(std::string arg);
+#endif
 
 	// (originally) threaded actions
 	int fileexists(std::string arg);
@@ -381,6 +384,9 @@ protected:
 	int mergesnapshots(std::string arg);
 #ifndef TW_EXCLUDE_NANO
 	int editfile(std::string arg);
+#endif
+#ifdef TW_BOOT_MENU
+	int threadedsleepcounter(std::string arg);
 #endif
 
 	int simulate;
