@@ -70,7 +70,6 @@ LOCAL_SRC_FILES := \
     twrpDigestDriver.cpp \
     openrecoveryscript.cpp \
     tarWrite.c \
-    amonet.cpp \
     twrpAdbBuFifo.cpp \
     twrpRepacker.cpp
 
