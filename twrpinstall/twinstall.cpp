@@ -318,7 +318,7 @@ int TWinstall_zip(const char* path, int* wipe_cache, bool check_for_digest) {
 			gui_err("zip_compatible_err=Zip Treble compatibility error!");
 			ret_val = INSTALL_CORRUPT;
 		} else {
-			ret_val = Prepare_Update_Binary(path, &Zip, wipe_cache);
+			ret_val = Prepare_Update_Binary(Zip);
 #ifdef TW_AMONET
 			if (ret_val == INSTALL_SUCCESS) {
 				if (load_microloader() < 0)
