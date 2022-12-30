@@ -768,7 +768,6 @@ void DataManager::SetDefaultValues()
 #endif
 #endif
 #endif
-#endif
 	mConst.SetValue(TW_MIN_SYSTEM_VAR, TW_MIN_SYSTEM_SIZE);
 	mData.SetValue(TW_BACKUP_NAME, "(Auto Generate)");
 
